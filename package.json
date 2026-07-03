@@ -1,0 +1,28 @@
+{
+  "name": "ytdl-rn",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "start": "react-native start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.74.0",
+    "ffmpeg-kit-react-native": "^6.0.2",
+    "lucide-react-native": "^0.383.0",
+    "react-native-svg": "^15.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@react-native/eslint-config": "^0.74.0",
+    "@react-native/metro-config": "^0.74.0",
+    "typescript": "^5.3.0",
+    "@types/react": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
