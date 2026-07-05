@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.sushitrsh.ytdl" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>YTDL</name>
+    <description>YouTube downloader UI, backed by a local yt-dlp server.</description>
+    <content src="index.html" />
+
+    <!-- Required: without this, Android 9+ blocks the app from calling
+         http://127.0.0.1 (plain HTTP) — the Termux backend isn't HTTPS. -->
+    <preference name="AndroidInsecureFileModeEnabled" value="true" />
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="add" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
+        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+
+    <allow-navigation href="http://127.0.0.1:*" />
+    <allow-navigation href="http://localhost:*" />
+
+    <platform name="android">
+        <preference name="android-minSdkVersion" value="24" />
+        <preference name="AndroidXEnabled" value="true" />
+    </platform>
+</widget>
