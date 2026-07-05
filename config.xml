@@ -7,7 +7,7 @@
     <!-- Required: without this, Android 9+ blocks the app from calling
          http://127.0.0.1 (plain HTTP) — the Termux backend isn't HTTPS. -->
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
-    <edit-config file="app/src/main/AndroidManifest.xml" mode="add" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
         <application android:usesCleartextTraffic="true" />
     </edit-config>
 
