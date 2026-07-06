@@ -29,10 +29,10 @@ jobs:
         run: cordova platform add android
 
       - name: Build APK
-        run: cordova build android --release -- --packageType=apk
+        run: cordova build android --debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: ytdl-cordova-release
-          path: platforms/android/app/build/outputs/apk/release/*.apk
+          name: ytdl-cordova-debug
+          path: platforms/android/app/build/outputs/apk/debug/*.apk
