@@ -34,11 +34,29 @@ jobs:
           cp ../config.xml .
           cordova platform add android
 
+      - name: Debug Structure
+        run: |
+          echo "=== Root ==="
+          ls -la
+          echo "=== App folder ==="
+          ls -la app/
+          echo "=== App WWW ==="
+          ls -la app/www/
+          echo "=== Config ==="
+          cat app/config.xml
+
       - name: Build APK
         run: cd app && cordova build android --debug
+
+      - name: Find APK
+        run: |
+          echo "=== Searching for APK ==="
+          find . -name "*.apk" -type f
+          echo "=== Android build output ==="
+          ls -R app/platforms/android/app/build/outputs/ 2>/dev/null || echo "No outputs dir"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: ytdl-cordova-debug
-          path: app/platforms/android/app/build/outputs/apk/debug/*.apk
+          path: "**/*.apk"
