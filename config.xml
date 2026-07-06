@@ -11,8 +11,14 @@
         <application android:usesCleartextTraffic="true" />
     </edit-config>
 
+    <!-- Lets the WebView hand off file downloads to Android's DownloadManager
+         — without this, tapping "Unduh" silently does nothing. -->
+    <hook type="after_prepare" src="hooks/after_prepare/add_download_listener.js" />
+
     <allow-navigation href="http://127.0.0.1:*" />
     <allow-navigation href="http://localhost:*" />
+    <allow-navigation href="http://*:*" />
+    <allow-navigation href="https://*/*" />
 
     <platform name="android">
         <preference name="android-minSdkVersion" value="24" />
